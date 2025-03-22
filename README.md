@@ -7,6 +7,19 @@ curl -sfL https://get.k3s.io | sh -
 cat /var/lib/rancher/k3s/server/node-token
 ```
 
+```bash
+mkdir ~/.kube
+cp /etc/rancher/k3s/k3s.yaml ~/.kube/config 
+chmod 600 ~/.kube/config
+export KUBECONFIG=~/.kube/config
+```
+
+Check
+```bash
+kubectl get nodes
+```
+
+
 Add clients
 ```bash
 export K3S_URL="https://192.168.188.81:6443"
