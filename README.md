@@ -17,6 +17,7 @@ export KUBECONFIG=~/.kube/config
 Check
 ```bash
 kubectl get nodes
+kubectl cluster-info
 ```
 
 
@@ -31,6 +32,20 @@ Check
 ```bash
 kubectl get nodes
 ```
+
+Small deployment
+```bash
+kubectl create deployment  nginx-app --image nginx --replicas 2
+kubectl get deployment nginx-app
+kubectl get pods
+kubectl expose deployment nginx-app --type NodePort --port 80
+
+kubectl get svc nginx-app
+
+curl http://<ip>
+
+
+``
 
 Uninstall
 ```bash
